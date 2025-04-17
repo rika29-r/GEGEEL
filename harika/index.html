@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Harika Shry</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --light: #f8f9fa;
+            --dark: #2d3436;
+            --success: #00b894;
+            --info: #0984e3;
+            --warning: #fdcb6e;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 30px 15px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--light);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        
+        .sidebar {
+            background: var(--primary);
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .main-content {
+            padding: 40px 30px;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+            margin: 0 auto 20px;
+        }
+        
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .profile-title {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            margin-top: 40px;
+        }
+        
+        .contact-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+            color: white;
+        }
+        
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+            color: white;
+        }
+        
+        .contact-icon {
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .section p {
+            color: var(--dark);
+        }
+        
+        .education-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--dark);
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        
+        .education-degree {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .education-details {
+            font-size: 0.9rem;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+        
+        .education-year {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 3px;
+        }
+        
+        .education-school {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--info);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--dark);
+        }
+        
+        .skill-level {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .skill-percent {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .python {
+            width: 85%;
+        }
+        
+        .html {
+            width: 90%;
+        }
+        
+        .sql {
+            width: 80%;
+        }
+        
+        .hobby-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .hobby-item {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                font-size: 40px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-img">HS</div>
+                <h1 class="profile-name">Harika Shry</h1>
+                <p class="profile-title">Mahasiswa Teknik Informatika</p>
+            </div>
+            
+            <div class="contact-info">
+                <h2 class="contact-title">Kontak</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>harikashry@gmail.com</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>WhatsApp: +62 812 6522 2015</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📸</div>
+                    <div>Instagram: @rika._sh</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🏠</div>
+                    <div>Jln Kalingga, Medan</div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h2 class="contact-title">Hobi</h2>
+                <ul class="hobby-list">
+                    <li class="hobby-item">Menggambar</li>
+                    <li class="hobby-item">Membaca</li>
+                    <li class="hobby-item">Menulis</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <section class="section">
+                <h2 class="section-title">Profil</h2>
+                <p>
+                    Saya adalah seorang mahasiswa Teknik Informatika di Universitas Mikroskil yang bersemangat dan memiliki minat dalam pengembangan software. 
+                    Saya memiliki keahlian dalam Python, HTML, dan SQL. Selain itu, saya juga menikmati aktivitas kreatif seperti 
+                    menggambar, membaca, dan menulis yang membantu saya mengembangkan pemikiran kritis dan kreativitas.
+                </p>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Pendidikan</h2>
+                
+                <div class="education-item">
+                    <div class="education-degree">Universitas</div>
+                    <div class="education-school">Universitas Mikroskil</div>
+                    <div class="education-details">Teknik Informatika</div>
+                    <div class="education-year">2023 - Sekarang</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-degree">SMA</div>
+                    <div class="education-school">Methodist 1</div>
+                    <div class="education-details">Sekolah Menengah Atas</div>
+                    <div class="education-year">2020 - 2023</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-degree">SMP</div>
+                    <div class="education-school">Methodist 3</div>
+                    <div class="education-details">Sekolah Menengah Pertama</div>
+                    <div class="education-year">2017 - 2020</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-degree">SD</div>
+                    <div class="education-school">Methodist 3</div>
+                    <div class="education-details">Sekolah Dasar</div>
+                    <div class="education-year">2011 - 2017</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-degree">TK</div>
+                    <div class="education-school">Methodist 3</div>
+                    <div class="education-details">Taman Kanak-kanak</div>
+                    <div class="education-year">2009 - 2011</div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Keahlian</h2>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-level">
+                            <div class="skill-percent python"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-level">
+                            <div class="skill-percent html"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-level">
+                            <div class="skill-percent sql"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Tentang Saya</h2>
+                <p>
+                    Sebagai mahasiswa Teknik Informatika di Universitas Mikroskil yang baru memulai perjalanan akademis pada tahun 2023, 
+                    saya selalu berusaha untuk mengembangkan keterampilan teknis saya dan mengikuti perkembangan teknologi terbaru. 
+                    Saya memiliki minat khusus dalam pengembangan web dan analisis data.
+                    Saya percaya bahwa kombinasi dari keterampilan teknis dan kreativitas dapat menghasilkan solusi inovatif untuk
+                    berbagai masalah.
+                </p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
